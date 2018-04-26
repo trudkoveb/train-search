@@ -1,0 +1,237 @@
+// grid
+.wrapper
+    padding-top: 105px
+    width: 1024px
+    margin: 0 auto
+    box-shadow: 0 0 20px 2px rgba(157, 157, 157, 1)
+    @media (#{$max_tablets--landscape})
+        width: auto
+    @media (#{$max_tablets})
+        padding-top: 0
+
+// common
+a, span, p, h1, button, label
+    color: #fff
+    text-decoration: none
+
+input, button, select
+    outline: none
+    border: none
+label, button, select, input[type="date"]
+    cursor: pointer
+
+h1
+    font-family: $font-reg
+    font-size: 24px
+    line-height: 27px
+    text-align: center
+    margin-bottom: 50px
+
+// style for input date
+input[type="date"][disabled]
+    background: $blue-medium url('../img/icons/icon-calendar-disable.png') no-repeat 95%
+    background-size: 23%
+    border-color: #0076AD
+    cursor: default
+    color: #94c4db
+
+input[type="date"]::-webkit-inner-spin-button
+    -webkit-appearance: none
+
+input[type="date"]::-webkit-clear-button
+    display: none
+    -webkit-appearance: none
+
+input[type="date"]::-webkit-calendar-picker-indicator
+    color: rgba(0, 0, 0, 0)
+    opacity: 1
+    display: block
+    background: url('../img/icons/icon-calendar.png') no-repeat
+    background-size: 100%
+    width: 26px
+    height: 32px
+
+// styles for pseudo-select
+.drop-down_wrapper.select-wrapper
+    width: 100%
+    padding-right: 0
+    &:hover
+        input
+            border-radius: 5px 5px 0 0
+    input
+        cursor: pointer
+        width: 100%
+        background: #fff url('../img/icons/icon-select-arrow.png') 96% / 20% no-repeat
+        padding: 13px
+        @media (#{$max_tablets})
+            background-size: 10%
+    &:after
+        display: none
+    input::-webkit-input-placeholder
+        color: #000
+    input::-moz-placeholder
+        color: #000
+    input:-moz-placeholder
+        color: #000
+    input:-ms-input-placeholder
+        color: #000
+    .drop-down_content
+        margin-top: 0
+        @media (#{$max_tablets})
+            left: 0
+            top: 100%
+        a
+            display: block
+            padding: 10px 15px
+
+
+// common classes
+button.button-swap
+    background: url("../img/icons/icon-swap.png") no-repeat center
+    background-size: 50%
+    width: 60px
+    height: 32px
+    &:hover
+        background: url("../img/icons/icon-swap-active.png") no-repeat center
+        background-size: 50%
+        width: 60px
+        height: 32px
+
+button.button-submit
+    border: 1px solid  #de5300
+    background: linear-gradient(#FBAC49, #F86407)
+    position: relative
+    padding: 13px 50px
+    padding-left: 80px
+    border-radius: 3px
+    font-size: 16px
+    font-family: $font-reg
+    &:after
+        content: ''
+        display: block
+        position: absolute
+        top: 15px
+        left: 50px
+        background: url("../img/icons/icon-search.png") no-repeat
+        background-size: 100%
+        width: 18px
+        height: 18px
+
+button.mobile-menu
+    background: transparent url('../img/icons/icon-mobile-menu.svg') no-repeat
+    width: 25px
+    height: 25px
+
+// drop-down nav
+.drop-down_wrapper
+    position: relative
+    padding-right: 25px
+    &:hover
+        .drop-down_content
+            display: block
+    &:after
+        content: ''
+        display: block
+        position: absolute
+        top: 45%
+        right: 0
+        background: url("../img/icons/triangle-down.png") no-repeat
+        background-size: 50%
+        width: 20px
+        height: 10px
+        @media (#{$max_tablets})
+            transform: rotate(-90deg)
+            top: 25%
+    .drop-down_content
+        display: none
+        position: absolute
+        left: 0
+        margin-top: 10px
+        z-index: 100
+        min-width: 100%
+        width: auto
+        overflow: hidden
+        text-align: left
+        background-color: #fff
+        border-radius: 0 0 6px 6px
+        border: 1px solid  #d7d7d7
+        border-top: none
+        @media (#{$max_tablets})
+            left: 100%
+            top: 0
+            margin-top: 0
+        li
+            &:not(:last-child)
+                border-bottom: 1px solid  #d7d7d7
+            &:hover
+                background-color: #BFD8EB
+        a
+            color: #000
+            font-family: $font-reg
+            font-size: 14px
+            white-space: nowrap
+            text-transform: none
+
+// Style own checkbox input
+
+.checkbox-style, .checkbox-wrapper
+    display: inline-block
+    vertical-align: middle
+
+.checkbox-wrapper
+    background-color: #0B92D2
+    border-radius: 5px
+    padding: 10px
+    margin-right: 15px
+    margin-bottom: 0
+    position: relative
+    &:after
+        content: ''
+        display: block
+        position: absolute
+        top: 10px
+        right: -6px
+        border-top: 8px solid transparent
+        border-left: 6px solid #0B92D2
+        border-bottom: 8px solid transparent
+    .checkbox
+        display: none
+
+.checkbox-style
+    position: relative
+    width: 16px
+    height: 16px
+    border-radius: 3px
+    background-color: #fff
+    border: 1px solid #c3c3c3
+    margin-right: 5px
+
+.checkbox:checked + .checkbox-style::before
+    content: ""
+    display: block
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    background: url('../img/icons/icon-check.png') no-repeat center
+    background-size: 100%
+    width: 10px
+    height: 8px
+
+// common placeholder
+input::-webkit-input-placeholder
+    color: #a9a9a9
+    font-size: 16px
+    font-family: $font-reg
+input::-moz-placeholder
+    color: #a9a9a9
+    font-size: 16px
+    font-family: $font-reg
+input:-moz-placeholder
+    color: #a9a9a9
+    font-size: 16px
+    font-family: $font-reg
+input:-ms-input-placeholder
+    color: #a9a9a9
+    font-size: 16px
+    font-family: $font-reg

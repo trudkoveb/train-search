@@ -1,0 +1,114 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title Russian Train Tickets
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='css/style.min.css')
+  body
+    .wrapper
+        header
+            nav
+                button.mobile-menu(onclick="showMenu()")
+                ul#menu
+                    li
+                        a(href="#") Search tickets
+                    li
+                        a(href="#") Sapsan
+                    li
+                        a(href="#") Allegro
+                    li.drop-down_wrapper
+                        a(href="#") Trans-Siberian
+                        ul.drop-down_content
+                            li
+                                a(href="#") Lorem
+                            li
+                                a(href="#") Lorem ipsum
+                            li
+                                a(href="#") Lorem ipsum dolor
+                    li.drop-down_wrapper
+                        a(href="#") Faq
+                        ul.drop-down_content
+                            li
+                                a(href="#") Lorem
+                            li
+                                a(href="#") Lorem ipsum
+                            li
+                                a(href="#") Lorem ipsum dolor
+                    li.drop-down_wrapper
+                        a(href="#") Tickets guide
+                        ul.drop-down_content
+                            li
+                                a(href="#") Group travel
+                            li
+                                a(href="#") Ticket types
+                            li
+                                a(href="#") Child policy
+                            li
+                                a(href="#") Change ticket request
+                            li
+                                a(href="#") Cancel tickets
+                    li.drop-down_wrapper
+                        a(href="#") Contact us
+                        ul.drop-down_content
+                            li
+                                a(href="#") Lorem
+                            li
+                                a(href="#") Lorem ipsum
+                            li
+                                a(href="#") Lorem ipsum dolor
+            .sign-in
+                a(href="#")
+                    span Sign in
+        main
+            h1 Russian Train Tickets
+            form(action="#")
+                .first-row
+                    div.departure-city-wrapper
+                        label(for="departure-city") Departure city:
+                        div
+                            input(type="text", id="departure-city", placeholder="Type city name")
+                            button.button-swap(id="swap")
+                        .tags
+                            span Ex:
+                            a(href="#", onclick="setDepartureCity(this.innerHTML)") St. Petersburg
+                            a(href="#", onclick="setDepartureCity(this.innerHTML)") Moscow
+                    div.arrival-city-wrapper
+                        label(for="arrival-city") Arrival city:
+                        input(type="text", id="arrival-city", placeholder="Type city name")
+                        .tags
+                            span Ex:
+                            a(href="#", onclick="setArrivalCity(this.innerHTML)") Milan
+                            a(href="#", onclick="setArrivalCity(this.innerHTML)") Turin
+                .second-row
+                    div.departure-date-wrapper
+                        label(for="departure-date") Departure date:
+                        input(type="date", id="departure-date")
+                    div.return-date-wrapper
+                        div
+                            label.checkbox-wrapper
+                                input.checkbox(type="checkbox", name="checkbox-roundtrip", id="roundtrip")
+                                span.checkbox-style
+                                span.label Roundtrip
+                        div
+                            label(for="return-date") Return date:
+                            input(type="date", id="return-date", disabled)
+                    div.currency-wrapper
+                        label(for="select") Currency
+                        div.drop-down_wrapper.select-wrapper
+                            input(type="text", id="select", readonly, placeholder="Usd")
+                            ul.drop-down_content
+                                li
+                                    a(href="#", value="usd", onclick="span(this.innerHTML)") Usd
+                                li
+                                    a(href="#", value="rub", onclick="span(this.innerHTML)") Rub
+                                li
+                                    a(href="#", value="gbr", onclick="span(this.innerHTML)") Gbr
+                                li
+                                    a(href="#", value="eur", onclick="span(this.innerHTML)") Eur
+                                li
+                                    a(href="#", value="chf", onclick="span(this.innerHTML)") Chf
+                    div.submit-wrapper
+                        button.button-submit Search
+
+    script(src="js/main.min.js")

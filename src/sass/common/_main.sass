@@ -1,0 +1,84 @@
+main
+    background-color: $blue
+    padding: 50px 90px 55px
+    @media (#{$max_tablets--landscape})
+        padding-left: 10px
+        padding-right: 10px
+    @media (#{$max_tablets})
+        padding-top: 80px
+    form
+        .first-row, .second-row
+            @include flex
+            flex-wrap: wrap
+        .first-row
+            align-items: flex-start
+        .second-row
+            align-items: flex-end
+            @media (#{$max_ipad})
+                flex-wrap: wrap
+                justify-content: space-between
+        input[type="text"], input[type="date"]
+            display: block
+        input[type="date"]
+            padding: 4px
+            color: #a9a9a9
+        input
+            border: 1px solid  #d7d7d7
+            border-radius: 5px
+            padding: 15px
+            font-size: 16px
+            font-family: $font-reg
+        label
+            @include commonFont
+            margin-bottom: 10px
+            display: inline-block
+        .tags
+            margin-top: 5px
+            span, a
+                display: inline-block
+                @include commonFont
+                color: $blue-extra-light
+                border-bottom: 1px dashed  $blue-extra-light
+                &:not(:last-child)
+                    margin-right: 5px
+            a:hover
+                border-bottom: none
+                color: #fff
+        .departure-city-wrapper
+            width: 53%
+            @media (#{$max_ipad})
+                width: 100%
+            input
+                width: 100%
+            > div:nth-of-type(1)
+                @include flex
+        .arrival-city-wrapper
+            width: 47%
+            @media (#{$max_ipad})
+                width: 100%
+            input
+                width: 100%
+        .departure-city-wrapper, .arrival-city-wrapper
+            margin-bottom: 25px
+        .return-date-wrapper
+            @include flex
+            align-items: flex-end
+            @media (#{$max_ipad})
+                width: 100%
+                justify-content: flex-start
+                @include mobileMarginTop
+            > div:first-child
+                margin-bottom: 5px
+        .departure-date-wrapper
+            @media (#{$max_ipad})
+                width: 100%
+        .currency-wrapper
+            width: 10%
+            @media (#{$max_ipad})
+                width: 50%
+                @include mobileMarginTop
+        .submit-wrapper
+            @media (#{$max_ipad})
+                @include mobileMarginTop
+                width: 100%
+                text-align: center

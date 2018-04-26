@@ -1,0 +1,61 @@
+header
+    background-color: $blue-light
+    padding: 0 90px
+    @include flex
+    @media (#{$max_tablets--landscape})
+        padding: 0 10px
+    @media (#{$max_tablets})
+        align-items: flex-start
+        padding: 10px
+        position: fixed
+        z-index: 100
+        width: 100%
+    nav
+        width: 90%
+        @media (#{$max_tablets})
+            width: 30%
+        @media (#{$max_phones})
+            width: 50%
+        .mobile-menu
+            @media (#{$min_tablets})
+                display: none
+        ul
+            @include flex
+            @media (#{$max_tablets})
+                flex-wrap: wrap
+                display: none
+                &.show
+                    display: block
+            li
+                padding: 10px 10px
+                cursor: pointer
+                @media (#{$max_tablets})
+                    width: 100%
+                &:hover
+                    background-color: #F75C00
+            a
+                text-transform: uppercase
+                font-family: $font-bold
+                font-size: 13px
+    .sign-in
+        span
+            @include commonFont
+            color: #A8D5EB
+            position: relative
+            &:before
+                content: ''
+                display: block
+                position: absolute
+                top: 2px
+                left: -20px
+                background: url("../img/icons/icon-man.png") no-repeat
+                background-size: 100%
+                width: 12px
+                height: 15px
+            &:hover
+                color: #fff
+                &:before
+                    background: url("../img/icons/icon-man-active.png") no-repeat
+                    background-size: 100%
+                    width: 12px
+                    height: 15px
